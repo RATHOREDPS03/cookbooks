@@ -1,0 +1,17 @@
+<%= node['mongodb3']['mongod']['log_dir'] %>/*.log {
+    daily
+    missingok
+    rotate <%= node[:logrotate][:rotate] %>
+    compress
+    delaycompress
+    notifempty
+    <% if node[:logrotate][:dateformat] -%>
+    dateext
+    dateformat <%= node[:logrotate][:dateformat] %>
+    <% end -%>
+    create 0644 <%= node['mongodb3']['user']%> www-data
+    sharedscripts
+    postrotate
+        [ ! -f /var/run/mongod.pid ] || kill -USR1 `cat /var/run/mongod.pid`
+    endscript
+}
