@@ -150,7 +150,7 @@ default['mongodb3']['config']['mongod']['systemLog']['syslogFacility'] = nil # d
 default['mongodb3']['config']['mongod']['systemLog']['path'] = '/var/log/mongodb/mongod.log'
 default['mongodb3']['config']['mongod']['systemLog']['logAppend'] = true # default : false
 default['mongodb3']['config']['mongod']['systemLog']['logRotate'] = nil # default : 'rename'
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
 default['mongodb3']['config']['mongod']['systemLog']['destination'] = 'file' # default : 'file'
 default['mongodb3']['config']['mongod']['systemLog']['timeStampFormat'] = nil # default : 'iso8601-local'
 
