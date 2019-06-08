@@ -2,11 +2,11 @@
 # Cookbook Name:: mongodb3
 # Attribute:: default
 #
-<<<<<<< HEAD
+
 # Copyright 2015, UrbanLadder
-=======
+
 # Copyright 2015, Sunggun Yu
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
 #
 # Licensed under the Apache License, Version 2.0 (the 'License');
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
 #
 
 # MongoDB version to install
-<<<<<<< HEAD
+
 default['mongodb3']['cluster_name'] = 'mongodb_cluster'
 default['mongodb3']['version'] = '3.2.0'
 default['mongodb3']['major_version'] = '3.2'
@@ -34,7 +34,7 @@ default['mongodb']['ruby_gems'] = {
         'bson_ext' => '1.12.0',
         'bson'     => '1.12.0'
 }
-=======
+
 default['mongodb3']['version'] = '3.2.8'
 
 # Please note : The default values for ['mongodb3']['package'] attributes will be set in `package_repo` recipe.
@@ -53,17 +53,17 @@ default['mongodb3']['package']['repo']['apt']['name'] = nil  # eg. 3.0, 3.2
 default['mongodb3']['package']['repo']['apt']['keyserver'] = nil # eg. hkp://keyserver.ubuntu.com:80
 default['mongodb3']['package']['repo']['apt']['key'] = nil # eg. 3.2 : 'EA312927', 3.0 : '7F0CEB10'
 default['mongodb3']['package']['repo']['apt']['components'] = nil # eg. ['multiverse']
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
 
 # Default attribute for MongoDB installation
 case node['platform_family']
   when 'rhel', 'fedora'
     mongo_user = 'mongod'
     mongo_group = 'mongod'
-<<<<<<< HEAD
+
     mongo_dbpath = '/vol/ume01/var/lib/mongo'
     mongo_pid_file = '/var/run/mongodb/mongodb.pid'
-=======
+
     mongo_dbpath = '/var/lib/mongo'
     # To guarantee the compatibility for centos 6 in previous version of mongodb3 cookbook
     if node['platform_version'].to_i >= 7
@@ -71,26 +71,26 @@ case node['platform_family']
     else
       mongo_pid_file = '/var/run/mongodb/mongodb.pid'
     end
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
     config_processManagement_fork = true
   when 'debian'
     mongo_user = 'mongodb'
     mongo_group = 'mongodb'
-<<<<<<< HEAD
+
     mongo_dbpath = '/vol/ume01/var/lib/mongodb'
     mongo_pid_file = '/var/run/mongodb.pid'
     config_processManagement_fork = false
-=======
+
     mongo_dbpath = '/var/lib/mongodb'
     mongo_pid_file = nil
     config_processManagement_fork = nil
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
 end
 
 # MongoDB user:group
 default['mongodb3']['user'] = mongo_user
 default['mongodb3']['group'] = mongo_group
-<<<<<<< HEAD
+
 node.default['mongodb3']['pid_file'] = mongo_pid_file
 node.default['mongodb3']['log_dir'] = '/vol/ume01/var/log/mongodb'
 node.default['mongodb3']['dbPath'] = mongo_dbpath
@@ -100,23 +100,23 @@ default['mongodb3']['mongod']['config_file'] = '/etc/mongod.conf'
 default['mongodb3']['mongod']['log_dir'] = '/vol/ume01/var/log/mongodb'
 default['mongodb3']['mongod']['open_file_limit'] = 65356
 default['mongodb3']['mongod']['max_proc_number'] = 36000
-=======
+
 
 # Mongod config file
 default['mongodb3']['mongod']['config_file'] = '/etc/mongod.conf'
 
 # Disable Transparent Huge Pages (THP)
 default['mongodb3']['mongod']['disable-transparent-hugepages'] = false
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
 
 # Mongos config file
 default['mongodb3']['mongos']['config_file'] = '/etc/mongos.conf'
 
-<<<<<<< HEAD
+
 # Key file contents
 default['mongodb3']['config']['key_file_content'] = nil
 
-=======
+
 # Runit template cookbook for mongos
 default['mongodb3']['mongos']['runit_template_cookbook'] = 'mongodb3'
 
@@ -126,7 +126,7 @@ default['mongodb3']['config']['key_file_content'] = nil
 # Key server
 default['mongodb3']['keyserver'] = 'hkp://keyserver.ubuntu.com:80'
 
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
 # Mongod config
 # The default value of the attribute is referred to the MongoDB documentation.
 # The attribute value of nil will be removed from mongod config file.
@@ -134,7 +134,7 @@ default['mongodb3']['keyserver'] = 'hkp://keyserver.ubuntu.com:80'
 # Also, deprecated attributed is not applied.
 
 # systemLog Options : http://docs.mongodb.org/manual/reference/configuration-options/#systemlog-options
-<<<<<<< HEAD
+
 default['mongodb3']['config']['mongod']['systemLog']['verbosity'] = 0 # default : 0
 default['mongodb3']['config']['mongod']['systemLog']['quiet'] = nil # default : false
 default['mongodb3']['config']['mongod']['systemLog']['traceAllException'] = nil # default : false
@@ -142,7 +142,7 @@ default['mongodb3']['config']['mongod']['systemLog']['syslogFacility'] = nil # d
 default['mongodb3']['config']['mongod']['systemLog']['path'] = '/vol/ume01/var/log/mongodb/mongod.log'
 default['mongodb3']['config']['mongod']['systemLog']['logAppend'] = true # default : false
 default['mongodb3']['config']['mongod']['systemLog']['logRotate'] = "reopen" # default : 'rename'
-=======
+
 default['mongodb3']['config']['mongod']['systemLog']['verbosity'] = nil # default : 0
 default['mongodb3']['config']['mongod']['systemLog']['quiet'] = nil # default : false
 default['mongodb3']['config']['mongod']['systemLog']['traceAllException'] = nil # default : false
@@ -176,12 +176,13 @@ default['mongodb3']['config']['mongod']['processManagement']['pidFilePath'] = ni
 
 # net Options : http://docs.mongodb.org/manual/reference/configuration-options/#net-options
 default['mongodb3']['config']['mongod']['net']['port'] = 9000
-=======
+
 default['mongodb3']['config']['mongod']['processManagement']['pidFilePath'] = mongo_pid_file
 
 # net Options : http://docs.mongodb.org/manual/reference/configuration-options/#net-options
 default['mongodb3']['config']['mongod']['net']['port'] = 27017
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
+
 default['mongodb3']['config']['mongod']['net']['bindIp'] = nil # default : '0.0.0.0'
 default['mongodb3']['config']['mongod']['net']['maxIncomingConnections'] = nil # default : 65536
 default['mongodb3']['config']['mongod']['net']['wireObjectCheck'] = nil # default : true
@@ -230,9 +231,9 @@ default['mongodb3']['config']['mongod']['storage']['directoryPerDB'] = nil # def
 default['mongodb3']['config']['mongod']['storage']['syncPeriodSecs'] = nil # default : 60
 <<<<<<< HEAD
 default['mongodb3']['config']['mongod']['storage']['engine'] = 'wiredTiger'
-=======
+
 default['mongodb3']['config']['mongod']['storage']['engine'] = nil # default -  since 3.2 : wiredTiger, until 3.2 : mmapv1
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
 
 # storage.mmapv1 Options : http://docs.mongodb.org/manual/reference/configuration-options/#storage-mmapv1-options
 default['mongodb3']['config']['mongod']['storage']['mmapv1']['preallocDataFiles'] = nil # default : true
@@ -263,11 +264,10 @@ default['mongodb3']['config']['mongod']['replication']['secondaryIndexPrefetch']
 # sharding Options : http://docs.mongodb.org/manual/reference/configuration-options/#sharding-options
 default['mongodb3']['config']['mongod']['sharding']['clusterRole'] = nil
 default['mongodb3']['config']['mongod']['sharding']['archiveMovedChunks'] = nil # default : true
-<<<<<<< HEAD
+
 default['mongodb3']['configsvr']['replica_set_name'] = "config_svr_replicaset"
 default['mongodb3']['configsvr']['port'] = 9010
-=======
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
 
 # auditLog Options : http://docs.mongodb.org/manual/reference/configuration-options/#auditlog-options
 default['mongodb3']['config']['mongod']['auditLog']['destination'] = nil
@@ -280,11 +280,11 @@ default['mongodb3']['config']['mongod']['snmp']['subagent'] = nil
 default['mongodb3']['config']['mongod']['snmp']['master'] = nil
 
 # Mongos config
-<<<<<<< HEAD
+
 default['mongodb3']['config']['mongos']['net']['port'] = 9001 # default : 27017
 default['mongodb3']['config']['mongos']['net']['bindIp'] = '127.0.0.1' # default : '0.0.0.0'
 default['mongodb3']['config']['mongos']['systemLog']['path'] = '/vol/ume01/var/log/mongodb/mongos.log'
-=======
+
 default['mongodb3']['config']['mongos']['net']['port'] = 27018 # default : 27017
 default['mongodb3']['config']['mongos']['net']['bindIp'] = '127.0.0.1' # default : '0.0.0.0'
 default['mongodb3']['config']['mongos']['systemLog']['path'] = '/var/log/mongodb/mongos.log'
@@ -298,7 +298,6 @@ default['mongodb3']['config']['mongos']['sharding']['autoSplit'] = true # defaul
 default['mongodb3']['config']['mongos']['sharding']['configDB'] = nil
 default['mongodb3']['config']['mongos']['sharding']['chunkSize'] = 64 # default : 64
 
-<<<<<<< HEAD
 # MMS automation agent config attribute
 default['mongodb3']['config']['mms']['mmsGroupId'] = nil
 default['mongodb3']['config']['mms']['mmsApiKey'] = nil
@@ -306,7 +305,7 @@ default['mongodb3']['config']['mms']['logLevel'] = 'INFO'
 default['mongodb3']['config']['mms']['maxLogFiles'] = 10
 default['mongodb3']['config']['mms']['maxLogFileSize'] = 268435456
 default['mongodb3']['config']['mms']['httpProxy'] = nil
-=======
+
 # MMS automation and monitoring agent config attributes
 ## common attributes for both automation and monitoring agent
 default['mongodb3']['config']['mms']['mmsApiKey'] = nil
@@ -334,4 +333,4 @@ default['mongodb3']['config']['mms']['krb5Principal'] = nil
 default['mongodb3']['config']['mms']['krb5Keytab'] = nil
 default['mongodb3']['config']['mms']['gsappiServiceName'] = nil
 default['mongodb3']['config']['mms']['enableMunin'] = nil
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+
