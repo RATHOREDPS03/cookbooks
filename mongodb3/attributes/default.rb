@@ -171,7 +171,7 @@ default['mongodb3']['config']['mongod']['systemLog']['component']['write']['verb
 # processManagement Options : http://docs.mongodb.org/manual/reference/configuration-options/#processmanagement-options
 
 default['mongodb3']['config']['mongod']['processManagement']['fork'] = config_processManagement_fork # default : false
-<<<<<<< HEAD
+#<<<<<<< HEAD
 default['mongodb3']['config']['mongod']['processManagement']['pidFilePath'] = nil
 
 # net Options : http://docs.mongodb.org/manual/reference/configuration-options/#net-options
@@ -229,7 +229,7 @@ default['mongodb3']['config']['mongod']['storage']['repairPath'] = nil
 default['mongodb3']['config']['mongod']['storage']['journal']['enabled'] = true
 default['mongodb3']['config']['mongod']['storage']['directoryPerDB'] = nil # default : false
 default['mongodb3']['config']['mongod']['storage']['syncPeriodSecs'] = nil # default : 60
-<<<<<<< HEAD
+#<<<<<<< HEAD
 default['mongodb3']['config']['mongod']['storage']['engine'] = 'wiredTiger'
 
 default['mongodb3']['config']['mongod']['storage']['engine'] = nil # default -  since 3.2 : wiredTiger, until 3.2 : mmapv1
@@ -288,7 +288,7 @@ default['mongodb3']['config']['mongos']['systemLog']['path'] = '/vol/ume01/var/l
 default['mongodb3']['config']['mongos']['net']['port'] = 27018 # default : 27017
 default['mongodb3']['config']['mongos']['net']['bindIp'] = '127.0.0.1' # default : '0.0.0.0'
 default['mongodb3']['config']['mongos']['systemLog']['path'] = '/var/log/mongodb/mongos.log'
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+#>>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
 default['mongodb3']['config']['mongos']['systemLog']['logAppend'] = true # default : false
 default['mongodb3']['config']['mongos']['systemLog']['destination'] = 'file' # default : 'file'
 
