@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 class Hash
   def delete_blank
     delete_if do |k, v|
@@ -32,7 +32,7 @@ module Mongodb3Helper
     JSON.parse(final_hash.dup.to_json).to_yaml
   end
 end
-=======
+
 module Mongodb3Helper
   def mongodb_config(config)
     config.to_hash.compact.to_yaml
