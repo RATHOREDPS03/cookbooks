@@ -199,3 +199,4 @@ service 'mongod' do
   subscribes :restart, "template[#{node['mongodb3']['mongod']['config_file']}]", :delayed
   subscribes :restart, "template[#{node['mongodb3']['config']['mongod']['security']['keyFile']}", :delayed
  #>>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+end
