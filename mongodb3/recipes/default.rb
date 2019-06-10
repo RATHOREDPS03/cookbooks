@@ -6,7 +6,7 @@
 # Copyright 2015, UrbanLadder
 #=======
 # Copyright 2015, Sunggun Yu
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+#>>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
 #
 # Licensed under the Apache License, Version 2.0 (the 'License');
 # you may not use this file except in compliance with the License.
