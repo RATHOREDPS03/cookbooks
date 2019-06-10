@@ -4,7 +4,7 @@
 #
 #<<<<<<< HEAD
 # Copyright 2015, UrbanLadder
-=======
+#=======
 # Copyright 2015, Sunggun Yu
 #>>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
 #
