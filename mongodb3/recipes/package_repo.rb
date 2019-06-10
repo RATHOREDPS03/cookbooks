@@ -2,11 +2,11 @@
 # Cookbook Name:: mongodb3
 # Recipe:: package_repo
 #
-<<<<<<< HEAD
+#<<<<<<< HEAD
 # Copyright 2015, UrbanLadder
 =======
 # Copyright 2015, Sunggun Yu
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+#>>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
 #
 # Licensed under the Apache License, Version 2.0 (the 'License');
 # you may not use this file except in compliance with the License.
@@ -21,14 +21,14 @@
 # limitations under the License.
 #
 
-<<<<<<< HEAD
+#<<<<<<< HEAD
 # Add the MongoDB 3.0 Package repository
 case node['platform_family']
   when 'rhel', 'fedora'
     yum_repository 'mongodb-org-3.0' do
       description 'MongoDB Repository'
       baseurl "https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.0/#{node['kernel']['machine'] =~ /x86_64/ ? 'x86_64' : 'i686'}"
-=======
+#=======
 pkg_major_version = node['mongodb3']['version'].to_f # eg. 3.0, 3.2
 
 # Setup default package version attribute to install
@@ -101,21 +101,21 @@ case node['platform_family']
     yum_repository "mongodb-org-#{pkg_major_version}" do
       description 'MongoDB Repository'
       baseurl node['mongodb3']['package']['repo']['url']
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+#>>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
       action :create
       gpgcheck false
       enabled true
       sslverify false
     end
   when 'debian'
-<<<<<<< HEAD
+#<<<<<< HEAD
     apt_repository 'mongodb' do
       uri 'http://repo.mongodb.org/apt/ubuntu'
       distribution "#{node['lsb']['codename']}/mongodb-org/#{node['mongodb3']['major_version']}" #we are locking to 3.0x to make sure we don't get major version upgrades w/o testing
       components ['multiverse']
       keyserver 'hkp://keyserver.ubuntu.com:80'
       key '7F0CEB10'
-=======
+#=======
     apt_repository "mongodb-org-#{pkg_major_version}" do
       uri node['mongodb3']['package']['repo']['url']
       if node['platform'] == 'ubuntu' and node['platform_version'].to_f == 15.04
@@ -127,7 +127,7 @@ case node['platform_family']
       components node['mongodb3']['package']['repo']['apt']['components']
       keyserver node['mongodb3']['package']['repo']['apt']['keyserver']
       key node['mongodb3']['package']['repo']['apt']['key']
->>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
+#>>>>>>> 59123b7291922651a404c2a0fef43fc9bb9029c0
       action :add
     end
     include_recipe 'apt'
